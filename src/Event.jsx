@@ -3,7 +3,7 @@ import { Container, Card, CardContent, TextField, Button, Typography, Grid, Box 
 
 const EventRegistration = () => {
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-12-31T23:59:59").getTime();
+    const targetDate = new Date("2025-05-15T19:00:00").getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 
@@ -29,7 +29,7 @@ const EventRegistration = () => {
   }, []);
 
   return (
-    <Box sx={{ backgroundColor: "#065F5B", minHeight: "100vh", display: "flex", alignItems: "center", p: 2 }}>
+    <Box sx={{ backgroundColor: "#065F5B", minHeight: "100vh", display: "flex", alignItems: "center", p: 0 }}>
       <Container maxWidth="lg">
         {/* Use display flex instead of Grid for more direct control */}
         <Box 
