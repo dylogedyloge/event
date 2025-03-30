@@ -29,7 +29,7 @@ const EventRegistration = () => {
   }, []);
 
   return (
-    <Box sx={{ backgroundColor: "#065F5B", minHeight: "100vh", display: "flex", alignItems: "center", p: 0 }}>
+    <Box sx={{ backgroundColor: "#065F5B", minHeight: "100vh", display: "flex", alignItems: "center", p: 2 ,direction:"rtl"}}>
       <Container maxWidth="lg">
         {/* Use display flex instead of Grid for more direct control */}
         <Box 
