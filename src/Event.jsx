@@ -10,10 +10,10 @@ const EventRegistration = () => {
     let timeLeft = {};
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        روز: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        ساعت: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        دقیقه: Math.floor((difference / 1000 / 60) % 60),
+        ثانیه: Math.floor((difference / 1000) % 60),
       };
     }
     return timeLeft;
@@ -31,26 +31,7 @@ const EventRegistration = () => {
   return (
     <Box sx={{ backgroundColor: "#065F5B", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", p: 2 }}>
       <Container maxWidth="lg">
-        <Grid container spacing={4} alignItems="center" justifyContent="center">
-          {/* Registration Form */}
-          <Grid item xs={12} md={4}>
-            <Card sx={{ p: 3, borderRadius: 3 }}>
-              <Typography variant="h6" fontWeight="bold" gutterBottom>
-                ثبت نام رویداد
-              </Typography>
-              <Typography variant="body2" color="textSecondary" gutterBottom>
-                لطفا درصورتی‌که کارت هدیه را پیدا کردید، اطلاعات مربوط به خود را وارد نمایید:
-              </Typography>
-              <TextField fullWidth margin="normal" label="نام" variant="outlined" />
-              <TextField fullWidth margin="normal" label="نام خانوادگی" variant="outlined" />
-              <TextField fullWidth margin="normal" label="شماره تماس" variant="outlined" />
-              <TextField fullWidth margin="normal" label="شماره کارت هدیه" variant="outlined" />
-              <Button fullWidth variant="contained" sx={{ mt: 2, backgroundColor: "#065F5B" }}>
-                ثبت نام
-              </Button>
-            </Card>
-          </Grid>
-
+        <Grid container spacing={4} direction={{ xs: 'column-reverse', md: 'row' }} alignItems="center">
           {/* Event Details */}
           <Grid item xs={12} md={6}>
             <Typography variant="h4" fontWeight="bold" color="white" gutterBottom>
@@ -81,6 +62,25 @@ const EventRegistration = () => {
                 زمان رویداد به پایان رسیده است!
               </Typography>
             )}
+          </Grid>
+
+          {/* Registration Form */}
+          <Grid item xs={12} md={6}>
+            <Card sx={{ p: 3, borderRadius: 3 }}>
+              <Typography variant="h6" fontWeight="bold" gutterBottom>
+                ثبت نام رویداد
+              </Typography>
+              <Typography variant="body2" color="textSecondary" gutterBottom>
+                لطفا درصورتی‌که کارت هدیه را پیدا کردید، اطلاعات مربوط به خود را وارد نمایید:
+              </Typography>
+              <TextField fullWidth margin="normal" label="نام" variant="outlined" />
+              <TextField fullWidth margin="normal" label="نام خانوادگی" variant="outlined" />
+              <TextField fullWidth margin="normal" label="شماره تماس" variant="outlined" />
+              <TextField fullWidth margin="normal" label="شماره کارت هدیه" variant="outlined" />
+              <Button fullWidth variant="contained" sx={{ mt: 2, backgroundColor: "#065F5B" }}>
+                ثبت نام
+              </Button>
+            </Card>
           </Grid>
         </Grid>
       </Container>
