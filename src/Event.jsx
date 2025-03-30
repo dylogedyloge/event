@@ -55,6 +55,10 @@ const EventRegistration = () => {
             <EventForm />
           </Box>
         </Box>
+        <Typography variant="h6" color="white">چطور شرکت کنید؟</Typography>
+        <Typography variant="body1">
+          1- در سظح شهر به دنبال کارت های پول آتریپا بگردید
+        </Typography>
       </Container>
     </Box>
   );
