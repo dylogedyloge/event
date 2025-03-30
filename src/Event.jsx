@@ -3,7 +3,7 @@ import { Container, Card, CardContent, TextField, Button, Typography, Grid, Box 
 
 const EventRegistration = () => {
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-12-31T23:59:59").getTime(); // Updated to future date
+    const targetDate = new Date("2025-12-31T23:59:59").getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 
@@ -29,11 +29,19 @@ const EventRegistration = () => {
   }, []);
 
   return (
-    <Box sx={{ backgroundColor: "#065F5B", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", p: 2 }}>
+    <Box sx={{ backgroundColor: "#065F5B", minHeight: "100vh", display: "flex", alignItems: "center", p: 2 }}>
       <Container maxWidth="lg">
-        <Grid container spacing={4} direction={{ xs: 'column-reverse', md: 'row' }} alignItems="center">
+        {/* Use display flex instead of Grid for more direct control */}
+        <Box 
+          sx={{ 
+            display: 'flex', 
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: 'center',
+            gap: 4
+          }}
+        >
           {/* Event Details */}
-          <Grid item xs={12} md={6}>
+          <Box sx={{ flex: 1, width: { xs: '100%', md: '50%' } }}>
             <Typography variant="h4" fontWeight="bold" color="white" gutterBottom>
               یک بازی هیجان‌انگیز در سطح شهر!
             </Typography>
@@ -62,10 +70,10 @@ const EventRegistration = () => {
                 زمان رویداد به پایان رسیده است!
               </Typography>
             )}
-          </Grid>
+          </Box>
 
           {/* Registration Form */}
-          <Grid item xs={12} md={6}>
+          <Box sx={{ flex: 1, width: { xs: '100%', md: '50%' } }}>
             <Card sx={{ p: 3, borderRadius: 3 }}>
               <Typography variant="h6" fontWeight="bold" gutterBottom>
                 ثبت نام رویداد
@@ -81,8 +89,8 @@ const EventRegistration = () => {
                 ثبت نام
               </Button>
             </Card>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
