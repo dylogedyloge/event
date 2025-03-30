@@ -3,7 +3,7 @@ import { Container, Card, CardContent, TextField, Button, Typography, Grid, Box 
 
 const EventRegistration = () => {
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2024-12-31T23:59:59").getTime();
+    const targetDate = new Date("2025-12-31T23:59:59").getTime(); // Updated to future date
     const now = new Date().getTime();
     const difference = targetDate - now;
 
@@ -50,7 +50,7 @@ const EventRegistration = () => {
               </Button>
             </Card>
           </Grid>
-          
+
           {/* Event Details */}
           <Grid item xs={12} md={6}>
             <Typography variant="h4" fontWeight="bold" color="white" gutterBottom>
@@ -62,14 +62,25 @@ const EventRegistration = () => {
             <Typography variant="h6" fontWeight="bold" color="#FDC500" gutterBottom>
               فرصت باقیمانده:
             </Typography>
-            <Box display="flex" gap={1}>
-              {Object.keys(timeLeft).map((key) => (
-                <Box key={key} sx={{ backgroundColor: "#FDC500", color: "black", p: 1.5, borderRadius: 1, textAlign: "center" }}>
-                  <Typography variant="h6" fontWeight="bold">{timeLeft[key]}</Typography>
-                  <Typography variant="body2">{key}</Typography>
-                </Box>
-              ))}
-            </Box>
+            {Object.keys(timeLeft).length > 0 ? (
+              <Box display="flex" gap={1}>
+                {Object.keys(timeLeft).map((key) => (
+                  <Box
+                    key={key}
+                    sx={{ backgroundColor: "#FDC500", color: "black", p: 1.5, borderRadius: 1, textAlign: "center" }}
+                  >
+                    <Typography variant="h6" fontWeight="bold">
+                      {timeLeft[key]}
+                    </Typography>
+                    <Typography variant="body2">{key}</Typography>
+                  </Box>
+                ))}
+              </Box>
+            ) : (
+              <Typography variant="h6" color="white">
+                زمان رویداد به پایان رسیده است!
+              </Typography>
+            )}
           </Grid>
         </Grid>
       </Container>
