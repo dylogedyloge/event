@@ -15,6 +15,7 @@ const EventRegistration = () => {
         width: "100%", // Ensure full width
         direction: "rtl",
         overflow: "hidden", // Prevent any overflow issues
+        pb:2
       }}
     >
       <Container
