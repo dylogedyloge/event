@@ -11,12 +11,22 @@ const EventRegistration = () => {
         display: "flex",
         alignItems: "center",
         p: 0,
+        m: 0, // Explicitly set margin to 0
+        width: "100%", // Ensure full width
         direction: "rtl",
+        overflow: "hidden", // Prevent any overflow issues
       }}
     >
       <Container
-        maxWidth="lg"
-        disableGutters // Add this prop to disable the default padding
+        maxWidth={false} // Use false instead of "lg" to remove width constraints
+        disableGutters
+        sx={{
+          p: 0,
+          m: 0,
+          width: "100%",
+          maxWidth: "100%", // Override any max-width
+          mr: 2, // Apply negative margin to counteract any remaining padding
+        }}
       >
         {/* Use display flex instead of Grid for more direct control */}
         <Box
