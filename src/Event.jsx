@@ -55,10 +55,21 @@ const EventRegistration = () => {
             <EventForm />
           </Box>
         </Box>
-        <Typography variant="h6" color="white">چطور شرکت کنید؟</Typography>
-        <Typography variant="body1">
-          1- در سظح شهر به دنبال کارت های پول آتریپا بگردید
+        <Typography variant="h6" color="white" fontWeight="bold" sx={{ mb: 1 }}>
+          چطور شرکت کنید؟
         </Typography>
+        <Typography variant="body1" color="white">
+          - در سطح شهر به دنبال کارت های پول آتریپا بگردید
+        </Typography>
+        <Typography variant="body1" color="white">-  کارت را پیدا کنید و کد مخصوصش را در سایت یا اپلیکیشن آتریپا ثبت کنید.</Typography>
+        <Typography variant="body1" color="white">- معادل مبلغ کارت،اعتبار هدیه دریافت کنید و از سفر، اقامت یا هر خریدی که وست دارید،لذت ببرید!</Typography>
+
+        <Typography variant="h6" fontWeight="bold" color="white" sx={{ mt: 2 , mb: 1}}>
+          قوانین ورود به رویداد :
+        </Typography>
+        <Typography variant="body1" color="white">- کارت ها در مکان های عمومی و قابل دسترسی پنهان شده اند.</Typography>
+        <Typography variant="body1" color="white">- هر کارت فقط یکبار قابل استفاده است،پس عجله کنید!</Typography>
+        <Typography variant="body1" color="white">- سرنخ ها و راهنمایی ها در اینستاگرام آتریپا منتشر می شوند،پس پیج ما را دنبال کنید!</Typography>
       </Container>
     </Box>
   );
