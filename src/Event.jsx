@@ -4,17 +4,20 @@ import EventTimer from "./EventTimer";
 import EventForm from "./EventForm";
 const EventRegistration = () => {
   return (
-    <Box   
+    <Box
       sx={{
         backgroundColor: "#006363",
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        p: 2,
+        p: 0,
         direction: "rtl",
       }}
     >
-      <Container maxWidth="lg">
+      <Container
+        maxWidth="lg"
+        disableGutters // Add this prop to disable the default padding
+      >
         {/* Use display flex instead of Grid for more direct control */}
         <Box
           sx={{
@@ -65,7 +68,6 @@ const EventRegistration = () => {
             </Box>
           </Box>
 
-        
           {/* Registration Form & Image */}
           <Box
             sx={{
