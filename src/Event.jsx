@@ -34,24 +34,34 @@ const EventRegistration = () => {
             >
               یک بازی هیجان‌انگیز در سطح شهر!
             </Typography>
-            <Typography variant="body1" color="white" paragraph>
-              ما در آتریپا یک ماجراجویی واقعی برای شما داریم! تعداد زیادی کارت
-              هدیه در نقاط مختلف شهر مخفی شده‌اند و شما می‌توانید با پیدا
+            <Typography variant="body1" color="white">
+              ما در آتریپا یک ماجراجویی واقعی برای شما تدارک دیدیم! تعداد زیادی
+              کارت هدیه در نقاط مختلف شهر مخفی شده‌اند و شما می‌توانید با پیدا
               کردنشان، از آتریپا خرید کنید.
             </Typography>
+
             <Typography
               variant="h6"
               fontWeight="bold"
               color="#FDC500"
               gutterBottom
-              sx={{display: "flex", alignItems: "center" ,justifyContent: "center"}}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                mt: 4,
+              }}
             >
               فرصت باقیمانده:
             </Typography>
             <Box
-            sx={{display: "flex", alignItems: "center" ,justifyContent: "center"}}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
             >
-            <EventTimer />
+              <EventTimer />
             </Box>
           </Box>
 
@@ -59,10 +69,10 @@ const EventRegistration = () => {
           <Box
             sx={{
               display: "flex",
-              flexDirection: {  md: "row" },
+              flexDirection: { md: "row" },
               alignItems: "center",
               flex: 1,
-             
+
               width: { xs: "100%", md: "50%" },
             }}
           >
@@ -76,12 +86,17 @@ const EventRegistration = () => {
               <img
                 src="/atripa-robot.png"
                 alt="Event Registration"
-                style={{ maxWidth: "100%"}}
+                style={{ maxWidth: "100%" }}
               />
             </Box>
           </Box>
         </Box>
-        <Typography variant="h6" color="white" fontWeight="bold" sx={{ mb: 1 , mt:3}}>
+        <Typography
+          variant="h6"
+          color="white"
+          fontWeight="bold"
+          sx={{ mb: 1, mt: 3 }}
+        >
           چطور شرکت کنید؟
         </Typography>
         <Typography variant="body1" color="white">
