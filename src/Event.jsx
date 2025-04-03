@@ -41,7 +41,7 @@ const EventRegistration = () => {
           {/* Event Details */}
           <Box sx={{ flex: 1, width: { xs: "100%", md: "50%" } }}>
             <Typography
-              variant="h4"
+              variant="h3"
               fontWeight="bold"
               color="white"
               gutterBottom
