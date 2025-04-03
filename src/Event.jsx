@@ -4,7 +4,7 @@ import EventTimer from "./EventTimer";
 import EventForm from "./EventForm";
 const EventRegistration = () => {
   return (
-    <Box
+    <Box   
       sx={{
         backgroundColor: "#006363",
         minHeight: "100vh",
