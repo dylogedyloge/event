@@ -43,7 +43,7 @@ const EventRegistration = () => {
             <Typography
               variant="h6"
               fontWeight="bold"
-              color="#FDC500"
+              color="#FFD400"
               gutterBottom
               sx={{
                 display: "flex",
