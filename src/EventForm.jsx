@@ -3,7 +3,12 @@ import { Card, TextField, Button, Typography } from "@mui/material";
 
 const EventForm = () => {
   return (
-    <Card sx={{ p: 3, borderRadius: 3 }}>
+    <Card sx={{ 
+      p: 3, 
+      borderRadius: 3,
+      ml: 0, // In RTL, margin-left controls the right visual side
+      boxShadow: 1,
+    }}>
       <Typography variant="h6" fontWeight="bold" gutterBottom>
         ثبت نام رویداد
       </Typography>

@@ -65,6 +65,7 @@ const EventRegistration = () => {
             </Box>
           </Box>
 
+        
           {/* Registration Form & Image */}
           <Box
             sx={{
@@ -72,21 +73,37 @@ const EventRegistration = () => {
               flexDirection: { md: "row" },
               alignItems: "center",
               flex: 1,
-
               width: { xs: "100%", md: "50%" },
+              overflow: "hidden",
             }}
           >
             {/* Registration Form */}
-            <Box sx={{ flex: 1 }}>
+            <Box
+              sx={{
+                flex: 1,
+                paddingLeft: 0, // In RTL, padding-left controls the right visual side
+                marginLeft: 0,
+              }}
+            >
               <EventForm />
             </Box>
 
-            {/* Image */}
-            <Box sx={{ flex: 1, display: "flex", justifyContent: "center" }}>
+            {/* Image - Use negative margin considering RTL */}
+            <Box
+              sx={{
+                flex: 1,
+                display: "flex",
+                justifyContent: "center",
+                mr: -10, // In RTL, margin-right pulls the image closer from the left visual side
+              }}
+            >
               <img
                 src="/atripa-robot.png"
                 alt="Event Registration"
-                style={{ maxWidth: "100%" }}
+                style={{
+                  maxWidth: "100%",
+                  display: "block",
+                }}
               />
             </Box>
           </Box>
