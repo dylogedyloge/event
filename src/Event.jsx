@@ -50,9 +50,30 @@ const EventRegistration = () => {
             <EventTimer />
           </Box>
 
-          {/* Registration Form */}
-          <Box sx={{ flex: 1, width: { xs: "100%", md: "50%" } }}>
-            <EventForm />
+          {/* Registration Form & Image */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: {  md: "row" },
+              alignItems: "center",
+              flex: 1,
+             
+              width: { xs: "100%", md: "50%" },
+            }}
+          >
+            {/* Registration Form */}
+            <Box sx={{ flex: 1 }}>
+              <EventForm />
+            </Box>
+
+            {/* Image */}
+            <Box sx={{ flex: 1, display: "flex", justifyContent: "center" }}>
+              <img
+                src="/atripa-robot.png"
+                alt="Event Registration"
+                style={{ maxWidth: "100%"}}
+              />
+            </Box>
           </Box>
         </Box>
         <Typography variant="h6" color="white" fontWeight="bold" sx={{ mb: 1 }}>
@@ -61,15 +82,33 @@ const EventRegistration = () => {
         <Typography variant="body1" color="white">
           - در سطح شهر به دنبال کارت های پول آتریپا بگردید
         </Typography>
-        <Typography variant="body1" color="white">-  کارت را پیدا کنید و کد مخصوصش را در سایت یا اپلیکیشن آتریپا ثبت کنید.</Typography>
-        <Typography variant="body1" color="white">- معادل مبلغ کارت،اعتبار هدیه دریافت کنید و از سفر، اقامت یا هر خریدی که وست دارید،لذت ببرید!</Typography>
+        <Typography variant="body1" color="white">
+          - کارت را پیدا کنید و کد مخصوصش را در سایت یا اپلیکیشن آتریپا ثبت
+          کنید.
+        </Typography>
+        <Typography variant="body1" color="white">
+          - معادل مبلغ کارت،اعتبار هدیه دریافت کنید و از سفر، اقامت یا هر خریدی
+          که وست دارید،لذت ببرید!
+        </Typography>
 
-        <Typography variant="h6" fontWeight="bold" color="white" sx={{ mt: 2 , mb: 1}}>
+        <Typography
+          variant="h6"
+          fontWeight="bold"
+          color="white"
+          sx={{ mt: 2, mb: 1 }}
+        >
           قوانین ورود به رویداد :
         </Typography>
-        <Typography variant="body1" color="white">- کارت ها در مکان های عمومی و قابل دسترسی پنهان شده اند.</Typography>
-        <Typography variant="body1" color="white">- هر کارت فقط یکبار قابل استفاده است،پس عجله کنید!</Typography>
-        <Typography variant="body1" color="white">- سرنخ ها و راهنمایی ها در اینستاگرام آتریپا منتشر می شوند،پس پیج ما را دنبال کنید!</Typography>
+        <Typography variant="body1" color="white">
+          - کارت ها در مکان های عمومی و قابل دسترسی پنهان شده اند.
+        </Typography>
+        <Typography variant="body1" color="white">
+          - هر کارت فقط یکبار قابل استفاده است،پس عجله کنید!
+        </Typography>
+        <Typography variant="body1" color="white">
+          - سرنخ ها و راهنمایی ها در اینستاگرام آتریپا منتشر می شوند،پس پیج ما
+          را دنبال کنید!
+        </Typography>
       </Container>
     </Box>
   );
