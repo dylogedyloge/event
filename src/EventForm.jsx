@@ -3,17 +3,17 @@ import { Card, TextField, Button, Typography } from "@mui/material";
 
 const EventForm = () => {
   return (
-    <Card sx={{ 
-      p: 3, 
-      borderRadius: 3,
-      ml: 0,
-      boxShadow: 1,
-      height: "340px", // Set a fixed height
-      display: "flex",
-      flexDirection: "column",
-      mt:8
-      
-    }}>
+    <Card
+      sx={{
+        p: 3,
+        borderRadius: 3,
+        ml: 0,
+        boxShadow: 1,
+        display: "flex",
+        flexDirection: "column",
+        mt: 8,
+      }}
+    >
       <div>
         <Typography variant="h6" fontWeight="bold" gutterBottom>
           ثبت نام رویداد
@@ -22,11 +22,11 @@ const EventForm = () => {
           لطفا درصورتی‌که کارت هدیه را پیدا کردید، اطلاعات مربوط به خود را وارد
           نمایید:
         </Typography>
-        <TextField 
-          fullWidth 
-          margin="dense" 
-          label="نام" 
-          variant="outlined" 
+        <TextField
+          fullWidth
+          margin="dense"
+          label="نام"
+          variant="outlined"
           size="small"
         />
         <TextField
