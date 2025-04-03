@@ -44,10 +44,15 @@ const EventRegistration = () => {
               fontWeight="bold"
               color="#FDC500"
               gutterBottom
+              sx={{display: "flex", alignItems: "center" ,justifyContent: "center"}}
             >
               فرصت باقیمانده:
             </Typography>
+            <Box
+            sx={{display: "flex", alignItems: "center" ,justifyContent: "center"}}
+            >
             <EventTimer />
+            </Box>
           </Box>
 
           {/* Registration Form & Image */}
@@ -76,7 +81,7 @@ const EventRegistration = () => {
             </Box>
           </Box>
         </Box>
-        <Typography variant="h6" color="white" fontWeight="bold" sx={{ mb: 1 }}>
+        <Typography variant="h6" color="white" fontWeight="bold" sx={{ mb: 1 , mt:3}}>
           چطور شرکت کنید؟
         </Typography>
         <Typography variant="body1" color="white">
