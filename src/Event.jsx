@@ -6,7 +6,7 @@ const EventRegistration = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#065F5B",
+        backgroundColor: "#006363",
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
