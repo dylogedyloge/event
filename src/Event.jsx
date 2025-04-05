@@ -15,7 +15,7 @@ const EventRegistration = () => {
         width: "100%", // Ensure full width
         direction: "rtl",
         overflow: "hidden", // Prevent any overflow issues
-        pb:2
+        pb: 2,
       }}
     >
       <Container
@@ -94,8 +94,8 @@ const EventRegistration = () => {
             <Box
               sx={{
                 flex: 1,
-                paddingLeft: 0, // In RTL, padding-left controls the right visual side
-                marginLeft: 0,
+                paddingLeft: { xs: 1, md: 0 }, // In RTL, padding-left controls the right visual side
+                marginLeft: { xs: 1, md: 0 },
               }}
             >
               <EventForm />
