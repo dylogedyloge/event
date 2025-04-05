@@ -105,7 +105,7 @@ const EventRegistration = () => {
             <Box
               sx={{
                 flex: 1,
-                display: "flex",
+                display: { xs: "none", md: "flex" },
                 justifyContent: "center",
                 mr: -10, // In RTL, margin-right pulls the image closer from the left visual side
               }}
