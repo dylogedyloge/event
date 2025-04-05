@@ -26,7 +26,8 @@ const EventRegistration = () => {
           m: 0,
           width: "100%",
           maxWidth: "100%", // Override any max-width
-          pr: 2, // Apply negative margin to counteract any remaining padding
+          pr: {md:2 ,xs:2}, // Apply negative margin to counteract any remaining padding
+          pl:{xs:2}
         }}
       >
         {/* Use display flex instead of Grid for more direct control */}
@@ -101,8 +102,8 @@ const EventRegistration = () => {
             <Box
               sx={{
                 flex: 1,
-                paddingLeft: { xs: 1, md: 0 }, // In RTL, padding-left controls the right visual side
-                marginLeft: { xs: 1, md: 0 },
+                paddingLeft: {  md: 0 }, // In RTL, padding-left controls the right visual side
+                marginLeft: {  md: 0 },
               }}
             >
               <EventForm />
