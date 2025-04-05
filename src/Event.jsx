@@ -28,7 +28,7 @@ const EventRegistration = () => {
           width: "100%",
           maxWidth: "100%", // Override any max-width
           pr: {md:2 ,xs:2}, // Apply negative margin to counteract any remaining padding
-          pl:{xs:2}
+          pl:{xs:2, md:0}
         }}
       >
         {/* Use display flex instead of Grid for more direct control */}
