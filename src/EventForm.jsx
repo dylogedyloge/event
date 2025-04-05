@@ -8,6 +8,7 @@ import {
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 
 // ✅ Validation Schema using Zod
 const schema = z.object({
@@ -18,7 +19,7 @@ const schema = z.object({
     .regex(/^09\d{9}$/, "شماره تماس باید با 09 شروع شده و 11 رقم باشد"),
   giftCardNumber: z
     .string()
-    .min(16, "شماره کارت هدیه باید حداقل 16 رقم داشته باشد"),
+    .min(16, "شماره کارت هدیه باید حداقل ۱۶ رقم داشته باشد"),
 });
 
 const EventForm = () => {
@@ -26,12 +27,28 @@ const EventForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log("Submitted Data:", data);
+  const onSubmit = async (data) => {
+    try {
+      const payload = {
+        full_name: `${data.firstName} ${data.lastName}`,
+        phone_number: data.phone,
+        card_number: data.giftCardNumber,
+      };
+
+      const response = await axios.post("https://api.atripa.ir/api/v2/account/user/event-signup/", payload);
+
+      console.log("✅ API Response:", response.data);
+      alert("اطلاعات با موفقیت ارسال شد!");
+      reset(); // Optional: reset form after submission
+    } catch (error) {
+      console.error("❌ API Error:", error);
+      alert("ارسال اطلاعات با خطا مواجه شد.");
+    }
   };
 
   const textFieldStyles = {
