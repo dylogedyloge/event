@@ -55,14 +55,16 @@ const EventForm = () => {
     "& .MuiOutlinedInput-root": {
       backgroundColor: "#F7F7F7",
     },
-    "& label": {
-      right: "1.75rem",
-      left: "auto",
-    },
-    "& label.MuiInputLabel-shrink": {
-      right: "0",
-    },
+    // ❌ REMOVE or comment out these to allow default label behavior
+    // "& label": {
+    //   right: "1.75rem",
+    //   left: "auto",
+    // },
+    // "& label.MuiInputLabel-shrink": {
+    //   right: "0",
+    // },
   };
+  
 
   return (
     <Card
