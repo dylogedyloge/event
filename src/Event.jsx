@@ -16,6 +16,7 @@ const EventRegistration = () => {
         direction: "rtl",
         overflow: "hidden", // Prevent any overflow issues
         pb: 2,
+        pt: {xs:2},
       }}
     >
       <Container
