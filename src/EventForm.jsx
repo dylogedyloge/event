@@ -1,30 +1,52 @@
 import React from "react";
-import { Card, TextField, Button, Typography } from "@mui/material";
+import {
+  Card,
+  TextField,
+  Button,
+  Typography,
+} from "@mui/material";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+// ✅ Validation Schema using Zod
+const schema = z.object({
+  firstName: z.string().min(2, "نام باید حداقل ۲ حرف باشد"),
+  lastName: z.string().min(2, "نام خانوادگی باید حداقل ۲ حرف باشد"),
+  phone: z
+    .string()
+    .regex(/^09\d{9}$/, "شماره تماس باید با 09 شروع شده و 11 رقم باشد"),
+  giftCardNumber: z
+    .string()
+    .min(16, "شماره کارت هدیه باید حداقل 16 رقم داشته باشد"),
+});
 
 const EventForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    console.log("Submitted Data:", data);
+  };
+
   const textFieldStyles = {
     "& .MuiOutlinedInput-root": {
-      // Target the root of the outlined input
       backgroundColor: "#F7F7F7",
-      // Optional: Adjust hover/focus styles if needed
-      // '&:hover .MuiOutlinedInput-notchedOutline': {
-      //   borderColor: 'primary.main', // Example
-      // },
-      // '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-      //   borderColor: 'primary.dark', // Example
-      // },
     },
-    // Ensure label is RTL (usually handled by theme, but can force)
     "& label": {
-      right: "1.75rem", // Adjust if needed based on padding/margin
+      right: "1.75rem",
       left: "auto",
     },
     "& label.MuiInputLabel-shrink": {
-      // Style for shrunk label
-      right: "0", // Adjust as needed
-      // You might need more specific selectors depending on exact positioning desired
+      right: "0",
     },
   };
+
   return (
     <Card
       sx={{
@@ -37,54 +59,71 @@ const EventForm = () => {
         mt: 8,
       }}
     >
-      <div>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Typography variant="h6" fontWeight="bold" gutterBottom>
           ثبت نام رویداد
         </Typography>
         <Typography variant="body2" gutterBottom>
-          لطفا درصورتی‌که کارت هدیه را پیدا کردید، اطلاعات مربوط به خود را وارد
-          نمایید:
+          لطفا درصورتی‌که کارت هدیه را پیدا کردید، اطلاعات مربوط به خود را وارد نمایید:
         </Typography>
+
         <TextField
+          {...register("firstName")}
           fullWidth
           margin="dense"
           label="نام"
           variant="outlined"
           size="small"
+          error={!!errors.firstName}
+          helperText={errors.firstName?.message}
           sx={textFieldStyles}
         />
+
         <TextField
+          {...register("lastName")}
           fullWidth
           margin="dense"
           label="نام خانوادگی"
           variant="outlined"
           size="small"
+          error={!!errors.lastName}
+          helperText={errors.lastName?.message}
           sx={textFieldStyles}
         />
+
         <TextField
+          {...register("phone")}
           fullWidth
           margin="dense"
           label="شماره تماس"
           variant="outlined"
           size="small"
+          error={!!errors.phone}
+          helperText={errors.phone?.message}
           sx={textFieldStyles}
         />
+
         <TextField
+          {...register("giftCardNumber")}
           fullWidth
           margin="dense"
           label="شماره کارت هدیه"
           variant="outlined"
           size="small"
+          error={!!errors.giftCardNumber}
+          helperText={errors.giftCardNumber?.message}
           sx={textFieldStyles}
         />
-      </div>
-      <Button
-        fullWidth
-        variant="contained"
-        sx={{ mt: 2, backgroundColor: "#065F5B" }}
-      >
-        ثبت نام
-      </Button>
+
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{ mt: 2, backgroundColor: "#065F5B" }}
+        >
+          ثبت نام
+        </Button>
+      </form>
     </Card>
   );
 };
