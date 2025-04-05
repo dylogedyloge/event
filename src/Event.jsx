@@ -105,6 +105,7 @@ const EventRegistration = () => {
                 flex: 1,
                 paddingLeft: {  md: 0 }, // In RTL, padding-left controls the right visual side
                 marginLeft: {  md: 0 },
+                mt:{xs:-8}
               }}
             >
               <EventForm />
